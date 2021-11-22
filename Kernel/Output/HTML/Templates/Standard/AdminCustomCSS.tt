@@ -9,93 +9,93 @@
 
 [% RenderBlockStart("Overview") %]
 <div class="MainBox ARIARoleMain LayoutFixedSidebar SidebarFirst">
-	<h1 class="InvisibleText">[% Translate("Manage CSS") | html %]</h1>
+    <h1 class="InvisibleText">[% Translate("Manage CSS") | html %]</h1>
 
-	[% BreadcrumbPath = [{
-		Name => Translate('Manage CSS'),
-		Link => Env("Action")
-	}] %]
+    [% BreadcrumbPath = [{
+        Name => Translate('Manage CSS'),
+        Link => Env("Action")
+    }] %]
 
-	[% INCLUDE "Breadcrumb.tt" Path = BreadcrumbPath %]
+    [% INCLUDE "Breadcrumb.tt" Path = BreadcrumbPath %]
 
-	<div class="SidebarColumn">
-		<div class="WidgetSimple">
-			<div class="Header">
-				<h2>[% Translate("Hint") | html %]</h2>
-			</div>
-			<div class="Content">
-				<p class="FieldExplanation">[% Translate("This CSS code will be executed on all pages for agents.") | html %]</p>
-				<p class="FieldExplanation">[% Translate("You should make a backup before a major update. You can use the build in export function.") | html %]</p>
-			</div>
-			<div class="Header">
-				<h2>[% Translate("Templates") | html %]*</h2>
-			</div>
-			<div class="Content">
-				<p class="FieldExplanation"><a id="TemplatePriority" href="#" onclick="return false;"><i class="fa fa-plus-square"></i> [% Translate("Colors for priorities") | html %]</a></p>
-				<p class="FieldExplanation"><a id="TemplateArticle" href="#" onclick="return false;"><i class="fa fa-plus-square"></i> [% Translate("Colors for the article overview") | html %]</a></p>
-				<p class="FieldExplanation">[% Translate("*will be added to the bottom of the editor.") | html %]</p>
-			</div>
-		</div>
-		<div class="WidgetSimple">
-			<div class="Header">
-				<h2>[% Translate("Preview") | html %]</h2>
-			</div>
-			<div class="Content">
-				<p class="FieldExplanation">[% Translate("Priorities") | html %] (1, 2, 3, 4, 5)</p>
-				<div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-1"></span></div>
-				<div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-2"></span></div>
-				<div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-3"></span></div>
-				<div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-4"></span></div>
-				<div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-5"></span></div>
+    <div class="SidebarColumn">
+        <div class="WidgetSimple">
+            <div class="Header">
+                <h2>[% Translate("Hint") | html %]</h2>
+            </div>
+            <div class="Content">
+                <p class="FieldExplanation">[% Translate("This CSS code will be executed on all pages for agents.") | html %]</p>
+                <p class="FieldExplanation">[% Translate("You should make a backup before a major update. You can use the build in export function.") | html %]</p>
+            </div>
+            <div class="Header">
+                <h2>[% Translate("Templates") | html %]*</h2>
+            </div>
+            <div class="Content">
+                <p class="FieldExplanation"><a id="TemplatePriority" href="#" onclick="return false;"><i class="fa fa-plus-square"></i> [% Translate("Colors for priorities") | html %]</a></p>
+                <p class="FieldExplanation"><a id="TemplateArticle" href="#" onclick="return false;"><i class="fa fa-plus-square"></i> [% Translate("Colors for the article overview") | html %]</a></p>
+                <p class="FieldExplanation">[% Translate("*will be added to the bottom of the editor.") | html %]</p>
+            </div>
+        </div>
+        <div class="WidgetSimple">
+            <div class="Header">
+                <h2>[% Translate("Preview") | html %]</h2>
+            </div>
+            <div class="Content">
+                <p class="FieldExplanation">[% Translate("Priorities") | html %] (1, 2, 3, 4, 5)</p>
+                <div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-1"></span></div>
+                <div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-2"></span></div>
+                <div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-3"></span></div>
+                <div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-4"></span></div>
+                <div style="margin: 4px; display: inline-block;" class="Flag Small"><span class="PriorityID-5"></span></div>
 
-				<p class="FieldExplanation">[% Translate("Article Overview") | html %]</p>
-				<table style="width: 100%">
-					<tbody class="UseArticleColors">
-						<tr class="system">
-							<td style="padding: 5px;">System</div></td>
-						</tr>
-						<tr class="system Active">
-							<td style="padding: 5px;">System Active</div></td>
-						</tr>
-						<tr class="VisibleForCustomer">
-							<td style="padding: 5px;">VisibleForCustomer</div></td>
-						</tr>
-						<tr class="VisibleForCustomer Active">
-							<td style="padding: 5px;">VisibleForCustomer Active</div></td>
-						</tr>
-						<tr class="NotVisibleForCustomer">
-							<td style="padding: 5px;">NotVisibleForCustomer</td>
-						</tr>
-						<tr class="NotVisibleForCustomer Active">
-							<td style="padding: 5px;">NotVisibleForCustomer Active</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-	</div>
-	<div class="ContentColumn">
-		<div class="WidgetSimple">
-			<div class="Header">
-				<h2>[% Translate("CSS for agents") | html %]</h2>
-			</div>
-			<div class="Content">
-				<form action="[% Env("CGIHandle") %]" method="post" enctype="multipart/form-data" class="Validate PreventMultipleSubmits">
-					<input type="hidden" name="Action" value="[% Env("Action") %]"/>
-					<input type="hidden" name="Subaction" value="[% Data.Action | uri %]Action"/>
-						<div class="RichTextField">
-							<textarea id="CSSField" class="RichText" rows="10" cols="60" name="CSSField">[% Data.CSSField | html %]</textarea>
-						</div>
-						<div class="Clear"></div>
-						<fieldset class="TableLike">
-								<div class="SpacingTop SaveButtons">
-									<button class="CallForAction Primary" id="Submit" type="submit" value="[% Translate("Save") | html %]"><span>[% Translate("Save") | html %]</span></button>
-									<button class="CallForAction" id="ExportCSS" type="button" value="[% Translate("Save") | html %]"><span>[% Translate("Export as .css") | html %]</span></button>
-								</div>
-						</fieldset>
-				</form>
-			</div>
-		</div>	
-	</div>
+                <p class="FieldExplanation">[% Translate("Article Overview") | html %]</p>
+                <table style="width: 100%">
+                    <tbody class="UseArticleColors">
+                        <tr class="system">
+                            <td style="padding: 5px;">System</div></td>
+                        </tr>
+                        <tr class="system Active">
+                            <td style="padding: 5px;">System Active</div></td>
+                        </tr>
+                        <tr class="VisibleForCustomer">
+                            <td style="padding: 5px;">VisibleForCustomer</div></td>
+                        </tr>
+                        <tr class="VisibleForCustomer Active">
+                            <td style="padding: 5px;">VisibleForCustomer Active</div></td>
+                        </tr>
+                        <tr class="NotVisibleForCustomer">
+                            <td style="padding: 5px;">NotVisibleForCustomer</td>
+                        </tr>
+                        <tr class="NotVisibleForCustomer Active">
+                            <td style="padding: 5px;">NotVisibleForCustomer Active</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="ContentColumn">
+        <div class="WidgetSimple">
+            <div class="Header">
+                <h2>[% Translate("CSS for agents") | html %]</h2>
+            </div>
+            <div class="Content">
+                <form action="[% Env("CGIHandle") %]" method="post" enctype="multipart/form-data" class="Validate PreventMultipleSubmits">
+                    <input type="hidden" name="Action" value="[% Env("Action") %]"/>
+                    <input type="hidden" name="Subaction" value="[% Data.Action | uri %]Action"/>
+                        <div class="RichTextField">
+                            <textarea id="CSSField" class="RichText" rows="10" cols="60" name="CSSField">[% Data.CSSField | html %]</textarea>
+                        </div>
+                        <div class="Clear"></div>
+                        <fieldset class="TableLike">
+                                <div class="SpacingTop SaveButtons">
+                                    <button class="CallForAction Primary" id="Submit" type="submit" value="[% Translate("Save") | html %]"><span>[% Translate("Save") | html %]</span></button>
+                                    <button class="CallForAction" id="ExportCSS" type="button" value="[% Translate("Save") | html %]"><span>[% Translate("Export as .css") | html %]</span></button>
+                                </div>
+                        </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 [% RenderBlockEnd("Overview") %]
